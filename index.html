@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | John Gabriel Lacar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <img src="./assets/profile.JPG" alt="Profile">
+    <h2>John Gabriel Lacar</h2>
+
+    <div class="info">
+      <p><i class="fas fa-envelope"></i> lacar.johngabriel1@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +63 991 772 9314</p>
+      <p><i class="fas fa-map-marker-alt"></i> Zone 2 Wong Compound, Barra, Opol, Mis Or, Philippines</p>
+    </div>
+
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-google"></i></a>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="foot">
+      <p>2025</p>
+    </div>
+
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">JGL</div>
+        <ul>
+          <li><a href="#" class="active" onclick="loadPage(event, 'components/home.html')">Home</a></li>
+          <li><a href="#" onclick="loadPage(event, 'components/about.html')">About</a></li>
+          <li><a href="#" onclick="loadPage(event, 'components/project.html')">Project</a></li>
+          <li><a href="#" onclick="loadPage(event, 'components/tech.html')">Tech</a></li>
+        </ul>
+      </nav>
+
+    <!-- Content Body -->
+    <section class="content" id="content">
+      <!-- Dynamic content will load here -->
+    </section>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
