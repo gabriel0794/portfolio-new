@@ -175,17 +175,18 @@ body {
 
 /* Container stays static */
 .content {
-    position: relative;
-    overflow: hidden; /* ensures content animation is clipped */
- 
-  }
-  
-  /* Animated children */
-  .content > * {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUpFade 0.5s ease-out forwards;
-  }
+  position: relative;
+  overflow: hidden;
+  background: #353540; /* stays visible */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/* Children animate in */
+.content > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
   
   @keyframes slideUpFade {
     to {
@@ -193,3 +194,119 @@ body {
       transform: translateY(0);
     }
   }
+
+  /* Existing styles stay the same above ... */
+  /* this is for the responsive section */
+
+/* ✅ Responsive adjustments */
+@media (max-width: 1024px) {
+  body {
+    flex-direction: column; /* Stack sidebar + main vertically */
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 90%;
+    margin: 20px auto 0;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .main {
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar ul li a {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+  }
+
+  .sidebar .info p {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .sidebar .social a {
+    font-size: 28px;
+  }
+
+  .navbar .logo {
+    font-size: 16px;
+    padding: 6px 15px;
+  }
+
+  .content {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+/* Hamburger hidden by default */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #D3DAD9;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger on mobile */
+    margin-right: 15px;
+  }
+
+  .navbar ul {
+    display: none; /* hide nav links */
+    flex-direction: column;
+    width: 100%;
+    background: #353540;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  .navbar ul.show {
+    display: flex; /* show when toggled */
+  }
+
+  .navbar ul li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
