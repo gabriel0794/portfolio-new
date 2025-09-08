@@ -9,68 +9,163 @@ body {
 }
 
 .highlight {
-    color: #7c5050; /* brownish shade */
+  color: #7c5050; /* brownish shade */
 }
 
 .about {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 .about h1 {
-    font-size: 70px;
-    letter-spacing: 2px;
-    color: #D3DAD9;
-    font-weight: bolder;
+  font-size: 70px;
+  letter-spacing: 2px;
+  color: #D3DAD9;
+  font-weight: bolder;
 }
 
 .about p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .card-container {
-    display: flex;
-    flex-direction: row;     /* side by side */
-    gap: 20px;               /* spacing between cards */ /* optional: center them horizontally */
-    flex-wrap: wrap;
-    justify-content: center;  
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .child {
-    background-color: #2B2B2B;
-    border-radius: 10px;
-    width: 23%;
-    height: 480px;
-    padding: 40px;
-    margin-top: 40px;
-    box-shadow: 3px 3px 2px rgba(27, 27, 27, 0.8);
-
-    /* keep transitions here (not in :hover) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #2B2B2B;
+  border-radius: 10px;
+  width: 23%;
+  height: 480px;
+  padding: 40px;
+  margin-top: 40px;
+  box-shadow: 3px 3px 2px rgba(27, 27, 27, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ✅ Hover stays consistent everywhere */
 .child:hover {
-    transform: translateY(-15px); /* card moves upward */
-    z-index: 2; /* stronger glow while lifted */
+  transform: translateY(-15px);
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .child h3 {
-    font-size: 30px;
-    margin-bottom: 50px;
-    color: #D3DAD9;
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: #D3DAD9;
 }
 
 .child p {
-    font-size: 18px;
-    max-width: 60%;
-    color: #D3DAD9;
+  font-size: 18px;
+  max-width: 60%;
+  color: #D3DAD9;
 }
 
 .child i {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  font-size: 80px;
+  color: #D3DAD9;
+  text-shadow: 3px 3px 5px rgba(36, 36, 36, 0.8);
+}
+
+/* ===================== */
+/* RESPONSIVE STYLES */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .child {
+    width: 45%;   /* 2 cards per row */
+    height: auto;
+  }
+
+  .child h3 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .child p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .child i {
+    margin-top: 60px;
+    font-size: 70px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .about {
+    margin: 0 15px;
+    text-align: center;
+  }
+
+  .about h1 {
+    font-size: 40px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  .card-container {
+    flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    font-size: 80px;
-    color: #D3DAD9;
-    text-shadow: 3px 3px 5px rgba(36, 36, 36, 0.8);
+  }
+
+  .child {
+    width: 90%;   
+    height: auto;
+    padding: 20px;
+  }
+
+  .child h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .child p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .child i {
+    margin-top: 40px;
+    font-size: 60px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .about h1 {
+    font-size: 32px;
+  }
+
+  .child {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .child h3 {
+    font-size: 20px;
+  }
+
+  .child p {
+    font-size: 13px;
+  }
+
+  .child i {
+    margin-top: 30px;
+    font-size: 50px;
+  }
 }

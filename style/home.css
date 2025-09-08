@@ -9,63 +9,140 @@ body {
 }
 
 .about {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%; 
-    line-height: 1.5;
-    margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; 
+  line-height: 1.5;
+  margin-left: 40px;
+  margin-right: 20px; /* small breathing room */
 }
 
 .about h1 {
-    font-size: 130px;
-    letter-spacing: 4px;
-    color: #D3DAD9;
-    margin-bottom: -50px;
+  font-size: 130px;
+  letter-spacing: 4px;
+  color: #D3DAD9;
+  margin-bottom: -50px;
 }
 
 .about h2 {
-    font-size: 100px;
-    color: #A5AAAA;
-    margin-bottom: 15px; /* space below h2 */
+  font-size: 100px;
+  color: #A5AAAA;
+  margin-bottom: 15px;
 }
 
 .about p {
-    font-size: 20px;
-    color: #A5AAAA;
-    margin-top: 10px;
-    max-width: 700px;  /* keep text from stretching too wide */
-    margin-top: -30px;
+  font-size: 20px;
+  color: #A5AAAA;
+  max-width: 700px;
+  margin-top: -30px;
 }
 
 .about .btn {
-    background: #7c5050;
-    color: #D3DAD9;
-    border: none;
-    padding: 14px 35px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 30px; /* spacing from paragraph */
-    width: 180px;
-  }
+  background: #7c5050;
+  color: #D3DAD9;
+  border: none;
+  padding: 14px 35px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  width: 180px;
+}
 
-.btn{
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 3px 3px 5px rgba(36, 36, 36, 0.8);
-    margin-top: 20px;
-  }
+.btn {
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 3px 3px 5px rgba(36, 36, 36, 0.8);
+  margin-top: 20px;
+}
 
 .btn a {
-    font-size: 20px;
+  font-size: 20px;
 }
-  
-  .about .btn:hover {
-    background: #744f4f;
-    transform: translateY(-3px); /* slight lift effect */
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+
+.about .btn:hover {
+  background: #744f4f;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ===================== */
+/* RESPONSIVE STYLES */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .about h1 {
+    font-size: 90px;
+    margin-bottom: -30px;
   }
+
+  .about h2 {
+    font-size: 70px;
+  }
+
+  .about p {
+    font-size: 18px;
+    max-width: 90%;
+  }
+
+  .about {
+    margin-left: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .about {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center; /* center everything */
+    align-items: center;
+  }
+
+  .about h1 {
+    font-size: 60px;
+    margin-bottom: -20px;
+  }
+
+  .about h2 {
+    font-size: 40px;
+  }
+
+  .about p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .about .btn {
+    width: 160px;
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .about h1 {
+    font-size: 42px;
+    margin-bottom: -10px;
+  }
+
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+  .about .btn {
+    width: 140px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

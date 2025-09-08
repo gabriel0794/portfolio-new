@@ -101,7 +101,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 140px;
+    margin-top: 100px;
   }
 
 /* Main */
@@ -297,32 +297,101 @@ body {
 /* Mobile styles */
 @media (max-width: 768px) {
   .navbar {
+    position: relative; /* anchor dropdown to navbar */
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 15px;
   }
 
+  /* Burger button */
   .menu-toggle {
-    display: block; /* show hamburger on mobile */
-    margin-right: 15px;
-  }
-
-  .navbar ul {
-    display: none; /* hide nav links */
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+    z-index: 1000;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
     width: 100%;
+    background: #D3DAD9;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Burger → X */
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Dropdown (hidden by default) */
+  .navbar ul {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    position: absolute;
+    top: 110%;       /* dropdown appears below navbar */
+    right: 15px;
+
     background: #353540;
-    margin-top: 10px;
-    padding: 10px 0;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 0 20px; /* remove vertical padding for smooth collapse */
+    width: 200px;
+
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      padding 0.3s ease;
   }
 
+  /* Show dropdown */
   .navbar ul.show {
-    display: flex; /* show when toggled */
+    max-height: 500px; /* large enough for all items */
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 20px; /* add padding back */
   }
 
-  .navbar ul li {
-    text-align: center;
-    margin: 10px 0;
-  }
+  /* Dropdown links */
+.navbar ul li {
+  text-align: left;
+  margin: 8px 0;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: block;
+  width: 100%;              /* make all links equal width */
+  box-sizing: border-box;   /* include padding in width */
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.navbar ul li a:hover {
+  background: #4a4a5a;
+}
 }
