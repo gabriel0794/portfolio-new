@@ -76,6 +76,33 @@ body {
   text-shadow: 3px 3px 5px rgba(36, 36, 36, 0.8);
 }
 
+/* ✅ Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #353540;
+  color: #D3DAD9;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 500px;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+.close:hover { color: #fff; }
+
 /* ===================== */
 /* RESPONSIVE STYLES */
 /* ===================== */
@@ -168,4 +195,20 @@ body {
     margin-top: 30px;
     font-size: 50px;
   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* ✅ Make cards clickable (cursor + hover) */
+.child {
+  cursor: pointer;
 }

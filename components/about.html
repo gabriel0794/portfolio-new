@@ -12,39 +12,42 @@
     <p>Learn more about me and how can I contribute to your team!</p>
     </div>
 
+    <!-- ✅ Card Container -->
     <div class="card-container">
-        <div class="child">
-            <div class="card">
-                <h3>Me</h3>
-                <p>My whole personality as me, no filter.</p>
-                <i class="fa-solid fa-hand"></i>
-            </div>
+        <div class="child" onclick="loadPage(event, 'details-about/me.html', 'about')">
+          <div class="card">
+            <h3>Me</h3>
+            <p>My whole personality as me, no filter.</p>
+            <i class="fa-solid fa-hand"></i>
+          </div>
         </div>
-
-        <div class="child">
-            <div class="card">
-                <h3>Family</h3>
-                <p>My lineage, Family Tree, and relatives.</p>
-                <i class="fa-solid fa-hand-holding-heart"></i>
-            </div>
+      
+        <div class="child" onclick="loadPage(event, 'details-about/family.html')">
+          <div class="card">
+            <h3>Family</h3>
+            <p>My lineage, Family Tree, and relatives.</p>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
         </div>
-
-        <div class="child">
-            <div class="card">
-                <h3>School & Skills</h3>
-                <p>Schools I attended and graduated from.</p>
-                <i class="fa-solid fa-code"></i>
-            </div>
+      
+        <div class="child" onclick="loadPage(event, 'details-about/school.html')">
+          <div class="card">
+            <h3>School & Skills</h3>
+            <p>Schools I attended and graduated from.</p>
+            <i class="fa-solid fa-code"></i>
+          </div>
         </div>
-
-        <div class="child">
-            <div class="card">
-                <h3>Hobbies</h3>
-                <p>Things I do outside work or for killing some time alone.</p>
-                <i class="fa-solid fa-gamepad"></i>
-            </div>
+      
+        <div class="child" onclick="loadPage(event, 'details-about/hobbies.html')">
+          <div class="card">
+            <h3>Hobbies</h3>
+            <p>Things I do outside work or for killing some time alone.</p>
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
         </div>
+      </div>
+  
 
-    </div>
+  <script src="../scripts/about.js"></script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Me</title>
+    <link rel="stylesheet" href="style/me.css" />
+  </head>
+  <body>
+    <div class="me">
+      <!-- Close button -->
+      <button
+        class="close-btn"
+        onclick="loadPage(null, 'components/about.html')"
+      >
+        ×
+      </button>
+
+      <h1 class="highlight">Me</h1>
+      <div class="about">
+        <div class="text">
+          <p class="p">
+            I’d describe myself as an optimistic and energetic person who enjoys
+            bringing enthusiasm into whatever I do. I love sports and being
+            active — it keeps me disciplined, motivated, and always ready to
+            work with others as a team. I’m the type who likes solving problems
+            and finding creative ways to make things work, whether it’s in
+            everyday life or when working on projects with friends and
+            colleagues.
+          </p>
+          <br />
+          <p class="p">
+            Outside of that, I’m a nature lover who enjoys the calm and
+            inspiration the outdoors brings. I try to stay spiritually tuned and
+            grounded, which helps me stay positive and balanced through life’s
+            ups and downs. Overall, I just enjoy connecting with people, sharing
+            good energy, and making the most out of the opportunities and
+            experiences that come my way.
+          </p>
+          <div class="icons">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-thumbs-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 40px;
+        font-size: 20px;
+        color: #d3dad9;
+      }
+
+      .icons i {
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      .icons i:hover {
+        color: #7c5050;
+        font-size: 35px;
+        transition: 0.3s;
+        text-shadow: 3px 3px 5px rgba(36, 36, 36, 0.8);
+      }
+
+      .highlight {
+        font-size: 58px;
+        font-weight: bold;
+        color: #d3dad9;
+        margin-bottom: 50px;
+      }
+
+      .p {
+        font-size: 20px;
+        color: #d3dad9;
+        max-width: 800px;
+      }
+
+      .me {
+        position: relative; /* ensures button positions correctly */
+        padding: 20px 20px;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 35px;
+        font-weight: bold;
+        color: #d3dad9;
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: color 0.3s ease;
+      }
+      .close-btn:hover {
+        color: #7c5050;
+      }
+    </style>
+
+    <script>
+      function closePage() {
+        // Load back About section, keep About nav active
+        window.parent.loadPage(null, "../components/about.html", "about");
+      }
+    </script>
+  </body>
+</html>
