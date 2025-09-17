@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Me</title>
+  </head>
+  <body>
+    <div class="me">
+      <!-- Close button -->
+      <button
+        class="close-btn"
+        onclick="loadPage(null, 'components/about.html')"
+      >
+        ×
+      </button>
+
+      <h1><span class="highlight">Achievements</span></h1>
+
+      <h1>
+        <span class="sub-highlight">My notable yet humble achievements</span>
+      </h1>
+
+      <!-- 🎓 Achievements Section -->
+<div class="achievements">
+  <!-- Text Left -->
+  <div class="achievement text">
+    <span class="label">Featured Achievement</span>
+    <h2>🏆 Bachelor of Science in Information Technology (BSIT)</h2>
+    <p>
+      Institution: University of Science and Technology of Southern Philippines (USTP)<br />
+      Address: Claro M. Recto Avenue, Lapasan, Cagayan de Oro City 9000, Philippines.<br />
+      Graduation Year: 2025
+    </p>
+
+    <div class="tags">
+      <span class="tag">Information Techonology</span>
+      <span class="tag">Track 1 Internet of Things</span>
+      <span class="tag">Mobile Development</span>
+      <span class="tag">Web Development</span>
+    </div>
+
+    <div class="meta">
+      📅 July 30, 2025 <br />
+      📍 USTP, Cagayan de Oro City
+    </div>
+  </div>
+
+  <!-- Image Right -->
+  <div class="achievement image">
+    <img src="../assets/dimploma.jpg" alt="Digital Solution Showcase Certificate" />
+  </div>
+</div>
+
+<!-- 🖥 Second Achievement (Image Left, Text Right) -->
+<div class="achievements second-row">
+  <!-- Image Left -->
+  <div class="achievement image">
+    <img src="../assets/recommendation.jpg" alt="Recommendation Letter from DENR-MGB X" />
+  </div>
+
+  <!-- Text Right -->
+  <div class="achievement text">
+    <span class="label">Special Recognition</span>
+    <h2>💡 Certificate of Recommendation</h2>
+    <p>
+      After finishing my On-the-Job training at DENR-MGB X, I received a Certificate of Recommendation from the DENR-MGB X.
+      Noting my exemplary effort and outstanding contribution in developing and completing the GeoHub.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Hackathon</span>
+      <span class="tag">Fintech</span>
+      <span class="tag">Innovation</span>
+    </div>
+
+    <div class="meta">
+      📅 May 22, 2025 <br />
+      📍 DENR-MGB Regional office X
+    </div>
+  </div>
+</div>
+
+    <style>
+      body {
+        font-family: "Reem Kufi", sans-serif;
+        background-color: #2b2b2b;
+        color: #fff;
+        /* ❌ No height:100vh, no overflow:hidden */
+      }
+
+      .me {
+        position: relative;
+        padding: 20px 0 40px; /* space at bottom so last content isn’t cut */
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #d3dad9;
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: color 0.3s ease;
+      }
+      .close-btn:hover {
+        color: #7c5050;
+      }
+
+      h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      .highlight {
+        font-size: 58px;
+        font-weight: bold;
+        color: #d3dad9;
+        margin-bottom: 50px;
+      }
+
+      .sub-highlight {
+        font-size: 32px;
+        color: #d3dad9;
+      }
+
+      /* 🎨 Achievements Grid */
+.achievements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 40px 80px;
+  align-items: center;
+}
+
+/* Each Achievement Card */
+.achievement {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 12px;
+  padding: 20px;
+  background: #2b2b2b; /* your theme background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Text Section */
+.achievement.text {
+  justify-content: center;
+}
+
+/* Image */
+.achievement.image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Label */
+.achievement .label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffcc70;
+  text-transform: uppercase;
+}
+
+/* Title */
+.achievement h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Text */
+.achievement p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* Meta info */
+.meta {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .achievements {
+    grid-template-columns: 1fr;
+  }
+}
+
+      .scroll-hint {
+        position: absolute;
+        top: 60px; /* just under your close button/header */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.3);
+        padding: 6px 14px;
+        border-radius: 20px;
+        animation: bounce 1.5s infinite;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translate(-50%, 0);
+        }
+        50% {
+          transform: translate(-50%, -6px);
+        }
+      }
+
+      .scroll-hint.hidden {
+        opacity: 0;
+      }
+    </style>
+
+    <script>
+      function closePage() {
+        // Load back About section, keep About nav active
+        window.parent.loadPage(null, "../components/about.html", "about");
+      }
+
+      // Handle scroll hint visibility
+      const content = window.parent?.document.querySelector(".content");
+      const scrollHint = document.getElementById("scrollHint");
+
+      if (content && scrollHint) {
+        content.addEventListener("scroll", () => {
+          if (content.scrollTop > 10) {
+            scrollHint.classList.add("hidden"); // hide when scrolling down
+          } else {
+            scrollHint.classList.remove("hidden"); // show again when back to top
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
