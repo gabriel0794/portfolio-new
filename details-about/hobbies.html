@@ -3,23 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me</title>
-    <link rel="stylesheet" href="style/me.css">
+    <title>Hobbies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="me">
+    <div class="hobbies-page">
         <!-- Close button -->
-        <button class="close-btn" onclick="loadPage(null, 'components/about.html')">×</button>
+        <button class="close-btn" onclick="window.parent.loadPage(null, 'components/about.html', 'about')">×</button>
       
         <h1><span class="highlight">Hobbies</span></h1>
-        <p>Things I do outside work or for killing some time alone.</p>
+        <p class="subtitle">Things I do outside work or for killing some time alone.</p>
+
+        <div class="hobbies-grid">
+          <!-- Gaming -->
+          <div class="hobby-card" style="--delay: 0.1s">
+            <div class="hobby-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="hobby-content">
+              <h3>Gaming</h3>
+              <p>Exploring virtual worlds, conquering challenges, and unwinding with immersive gameplay.</p>
+            </div>
+            <div class="hobby-glow"></div>
+          </div>
+
+          <!-- Music -->
+          <div class="hobby-card" style="--delay: 0.2s">
+            <div class="hobby-icon">
+              <i class="fas fa-headphones"></i>
+            </div>
+            <div class="hobby-content">
+              <h3>Music</h3>
+              <p>Vibing to different genres, discovering new artists, and letting melodies set the mood.</p>
+            </div>
+            <div class="hobby-glow"></div>
+          </div>
+
+          <!-- Coding -->
+          <div class="hobby-card" style="--delay: 0.3s">
+            <div class="hobby-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="hobby-content">
+              <h3>Coding</h3>
+              <p>Building side projects, experimenting with new tech, and turning ideas into reality.</p>
+            </div>
+            <div class="hobby-glow"></div>
+          </div>
+
+          <!-- Movies/Anime -->
+          <div class="hobby-card" style="--delay: 0.4s">
+            <div class="hobby-icon">
+              <i class="fas fa-film"></i>
+            </div>
+            <div class="hobby-content">
+              <h3>Movies & Anime</h3>
+              <p>Binge-watching series, appreciating storytelling, and getting lost in cinematic universes.</p>
+            </div>
+            <div class="hobby-glow"></div>
+          </div>
+
+          <!-- Reading -->
+          <div class="hobby-card" style="--delay: 0.5s">
+            <div class="hobby-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="hobby-content">
+              <h3>Reading</h3>
+              <p>Diving into tech blogs, manga, or the occasional novel to expand my horizons.</p>
+            </div>
+            <div class="hobby-glow"></div>
+          </div>
+
+          <!-- Coffee -->
+          <div class="hobby-card" style="--delay: 0.6s">
+            <div class="hobby-icon">
+              <i class="fas fa-mug-hot"></i>
+            </div>
+            <div class="hobby-content">
+              <h3>Coffee</h3>
+              <p>Fueling late-night coding sessions and appreciating a good brew.</p>
+            </div>
+            <div class="hobby-glow"></div>
+          </div>
+        </div>
       </div>
       
       <style>
-        .me {
-          position: relative; /* ensures button positions correctly */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
         }
-      
+
+        html, body {
+          font-family: 'Reem Kufi', sans-serif;
+          background-color: #2B2B2B;
+          color: #D3DAD9;
+          min-height: 100%;
+        }
+
+        .hobbies-page {
+          position: relative;
+          padding: 20px 25px 40px;
+        }
+
         .close-btn {
           position: absolute;
           top: 15px;
@@ -30,18 +119,189 @@
           cursor: pointer;
           background: none;
           border: none;
-          transition: color 0.3s ease;
+          transition: all 0.3s ease;
+          z-index: 10;
         }
+
         .close-btn:hover {
           color: #7c5050;
+          transform: rotate(90deg);
+        }
+
+        h1 {
+          font-size: 60px;
+          letter-spacing: 2px;
+          color: #D3DAD9;
+          font-weight: 700;
+          margin-bottom: 10px;
+          animation: fadeInDown 0.6s ease forwards;
+        }
+
+        .highlight {
+          font-size: 60px;
+          font-weight: bold;
+          color: #d3dad9;
+          margin-bottom: 50px;
+        }
+
+        .subtitle {
+          font-size: 18px;
+          color: #a0a0a0;
+          margin-bottom: 40px;
+          animation: fadeInDown 0.6s ease 0.1s forwards;
+          opacity: 0;
+        }
+
+        .hobbies-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 25px;
+          max-width: 1200px;
+        }
+
+        .hobby-card {
+          position: relative;
+          background: linear-gradient(145deg, #2B2B2B, #252525);
+          border-radius: 16px;
+          padding: 30px;
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          border: 1px solid rgba(124, 80, 80, 0.1);
+          animation: fadeInUp 0.6s ease forwards;
+          animation-delay: var(--delay);
+          opacity: 0;
+        }
+
+        .hobby-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          border-color: rgba(124, 80, 80, 0.4);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+                      0 0 30px rgba(124, 80, 80, 0.15);
+        }
+
+        .hobby-card:hover .hobby-icon {
+          transform: scale(1.1) rotate(5deg);
+          background: #7c5050;
+          color: #D3DAD9;
+        }
+
+        .hobby-card:hover .hobby-glow {
+          opacity: 1;
+        }
+
+        .hobby-icon {
+          flex-shrink: 0;
+          width: 60px;
+          height: 60px;
+          background: rgba(124, 80, 80, 0.2);
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 26px;
+          color: #7c5050;
+          transition: all 0.4s ease;
+        }
+
+        .hobby-content h3 {
+          font-size: 22px;
+          font-weight: 600;
+          color: #D3DAD9;
+          margin-bottom: 8px;
+          transition: color 0.3s ease;
+        }
+
+        .hobby-card:hover .hobby-content h3 {
+          color: #7c5050;
+        }
+
+        .hobby-content p {
+          font-size: 15px;
+          color: #888;
+          line-height: 1.5;
+        }
+
+        .hobby-glow {
+          position: absolute;
+          top: -50%;
+          right: -50%;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle, rgba(124, 80, 80, 0.15) 0%, transparent 70%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 40px;
+          }
+
+          .hobbies-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .hobby-card {
+            padding: 20px;
+          }
+
+          .hobby-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+          }
+
+          .hobby-content h3 {
+            font-size: 18px;
+          }
+
+          .hobby-content p {
+            font-size: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hobbies-page {
+            padding: 15px;
+          }
+
+          h1 {
+            font-size: 32px;
+          }
+
+          .subtitle {
+            font-size: 15px;
+          }
         }
       </style>
-      
-      <script>
-        function closePage() {
-          // Load back About section, keep About nav active
-          window.parent.loadPage(null, "../components/about.html", "about");
-        }
-      </script>
 </body>
 </html>
